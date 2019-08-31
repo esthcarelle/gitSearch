@@ -1,0 +1,9 @@
+<input [(ngModel)]="user" name="user" (keyup)='findPro()'>
+
+<div *ngIf="profile">
+<p>{{profile.login}} </p>
+<p>{{profile.company}}</p>
+</div>
+<div *ngFor="let repo of repos ">
+<p> {{repo.name}}</p>
+</div>
