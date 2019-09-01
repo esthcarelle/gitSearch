@@ -7,10 +7,10 @@ import {GitserviceService} from '../gitservice.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
 user;
 profile;
 repos;
+
   constructor(private profilee:GitserviceService) {
     this.profilee.getProfileInfo().subscribe(profile=>{
       this.profile=profile;
