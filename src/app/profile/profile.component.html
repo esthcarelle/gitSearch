@@ -11,14 +11,12 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-         <li><a>Read More</a></li>
+          <li class="active"><a routerLink="/profile">Home</a></li>
+         <li><a routerLink="/readmore">Read More</a></li>
         </ul>
-        
-            <input [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            
-          
+      
       </div>
+      <input [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </div>
   </nav>
     
@@ -33,15 +31,13 @@
                                 <img src="{{profile.avatar_url}}" class="img-circle img-responsive">
                             </div>
                             <div class="col-md-6">
-                                <div class="card text-center">
-                                    <div class="card-header">
-                                     Description
-                                    </div>
-                                    <div class="card-body">
-                                      <h5 class="card-title">Email:{{profile.email}}</h5>
-                                      <p class="card-text">Name:{{profile.name}}</p>
-                                      <button type="button" class="btn btn-dark">{{profile.followers}} followers</button>
-                                      <button type="button" class="btn btn-dark">{{profile.following}} followings </button>
+                                <div>
+                                   
+                                    <div >
+                                      <p>Email:{{profile.email}}</p>
+                                      <p >Name:{{profile.name}}</p>
+                                      <button type="button" class="btn btn-outline-dark">{{profile.followers}} followers</button>
+                                      <button type="button" class="btn btn-outline-dark">{{profile.following}} followings </button>
                                       <a href="{{ profile.html_url}}" class="btn btn-dark">View profile</a>
                                     </div>
                                     <div class="card-footer ">
