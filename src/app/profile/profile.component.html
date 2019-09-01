@@ -14,9 +14,9 @@
           <li class="active"><a routerLink="/profile">Home</a></li>
          <li><a routerLink="/readmore">Read More</a></li>
         </ul>
-      
+        <input [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       </div>
-      <input [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+     
     </div>
   </nav>
     
@@ -24,7 +24,7 @@
 
 
         <div *ngIf="profile">
-            <div style="background-color:rgb(29, 26, 26)" >
+            <div  >
                     <div class="container" >
                             <div class="row">
                             <div class="col-md-6" >
