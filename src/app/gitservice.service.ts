@@ -21,7 +21,7 @@ export class GitserviceService {
    
    }
    getName(user:string){
-this.user=user;
+     this.user=user;
    }
  
 }
