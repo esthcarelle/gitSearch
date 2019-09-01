@@ -1,9 +1,63 @@
-<input [(ngModel)]="user" name="user" (keyup)='findPro()'>
 
-<div *ngIf="profile">
-<p>{{profile.login}} </p>
-<p>{{profile.company}}</p>
-</div>
-<div *ngFor="let repo of repos ">
-<p> {{repo.name}}</p>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">Github Search</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+         <li><a>Read More</a></li>
+        </ul>
+        
+            <input [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            
+          
+      </div>
+    </div>
+  </nav>
+    
+
+
+
+        <div *ngIf="profile">
+            <div id="main">
+                    <div class="container" >
+                            <div class="row">
+                            <div class="col-md-6">
+                                <img src="{{profile.avatar_url}}" class="img-circle img-responsive">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                     Description
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Email:{{profile.email}}</h5>
+                                      <p class="card-text">Name:{{profile.name}}</p>
+                                      <button type="button" class="btn btn-dark">{{profile.followers}} followers</button>
+                                      <button type="button" class="btn btn-dark">{{profile.following}} followings </button>
+                                      <a href="{{ profile.html_url}}" class="btn btn-dark">View profile</a>
+                                    </div>
+                                    <div class="card-footer ">
+                                        
+                                    Created {{profile.created_at|date}} days ago
+                                    </div>
+                                  </div>
+                            </div>
+                            </div>
+            </div>
+               
+                
+                </div>
+                <div *ngFor="let repo of repos ">
+                <p> {{repo.name}}</p>
+                </div>
+                
+
 </div>

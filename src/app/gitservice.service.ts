@@ -7,8 +7,11 @@ import {Github} from './github'
   providedIn: 'root'
 })
 export class GitserviceService {
-
-  private user:string;
+  constructor(private http:HttpClient) {
+   
+   }
+  
+  private user:string="esthcarelle";
   private clientId:'364fb8f9a5cada030543';
   private clientpassword:'7eb68359515222df8cf85f76a79eab5de3c21cb3';
   getProfileInfo(){
@@ -21,8 +24,5 @@ export class GitserviceService {
    getName(user:string){
 this.user=user;
    }
-  constructor(private http:HttpClient) {
-    this.user='esthcarelle';
-   }
-  
+ 
 }
