@@ -7,7 +7,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="#">Github Search</a>
+        <a class="navbar-brand" RouterLink="/profile">Github Search</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -24,36 +24,63 @@
 
 
         <div *ngIf="profile">
-            <div id="main">
+            <div style="background-color:rgb(29, 26, 26)" >
                     <div class="container" >
                             <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6" >
                                 <img src="{{profile.avatar_url}}" class="img-circle img-responsive">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: white">
                                 <div>
                                    
-                                    <div >
-                                      <p>Email:{{profile.email}}</p>
-                                      <p >Name:{{profile.name}}</p>
-                                      <button type="button" class="btn btn-outline-dark">{{profile.followers}} followers</button>
-                                      <button type="button" class="btn btn-outline-dark">{{profile.following}} followings </button>
-                                      <a href="{{ profile.html_url}}" class="btn btn-dark">View profile</a>
-                                    </div>
-                                    <div class="card-footer ">
+                                        <ul class="list-group">
+                                                <li class="list-group-item"><b>Username: </b> {{profile.login}}</li>
+                                                <li class="list-group-item"><b>Location: </b> {{profile.location}}</li>
+                                                <li class="list-group-item"><b>E-Mail: </b> {{profile.email}}</li>
+                                                <li class="list-group-item"><b>Blog Link: </b> {{profile.blog}}</li>
+                                                <li class="list-group-item"><b>Member Since: </b> {{profile.created_at|date}} days ago</li>
+                                            </ul>
+                                   
                                         
-                                    Created {{profile.created_at|date}} days ago
-                                    </div>
+                                    
+                                    
                                   </div>
+
+                        <span class="p-a-05 bg-info text-md-center"> {{profile.public_repos}} Public Repos </span>
+                        <span class="p-a-05 bg-primary m-t-1 text-md-center"> {{profile.public_gists}} Public Gists </span>
+                        <span class="p-a-05 bg-danger m-t-1 text-md-center"> {{profile.followers}} Followers </span>
+                        <span class="p-a-05 bg-inverse m-t-1 text-md-center"> {{profile.following}} Followings </span>
+
+
                             </div>
                             </div>
             </div>
                
                 
                 </div>
-                <div *ngFor="let repo of repos ">
-                <p> {{repo.name}}</p>
-                </div>
-                
-
+               <div id="main">
+                    <div class="panel panel-default container">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">User Repos</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div *ngFor="let repo of repos">
+                                      <div class="row">
+                                        <div class="col-md-9">
+                                            <h4><a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a></h4> <a class="hover" (click)="readmeFun(repo.name)"> Readme </a>
+                                            <p>{{repo.description}}</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="label label-default">{{repo.watchers}} Watchers</span>
+                                            <span class="label label-primary">{{repo.forks}} Forks</span>
+                                            <span class="label label-primary">{{repo.stargazers_count}} Stars</span>
+                                        </div>  
+                                      </div>
+                                      <hr>
+                                </div>
+                            </div>
+                        </div>
+                    
+               </div>
+                      
 </div>
