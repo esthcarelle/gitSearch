@@ -23,39 +23,31 @@
         <input style="margin-bottom:5%" [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Enter a github username" aria-label="Search">
 </div>
         
-
 <div *ngIf="profile" >
-            <div>
-                    <div class="container" >
-                            <div class="row" style="margin-bottom:5%" >
+        <div class="container" >
+                    <div class="row" style="margin-bottom:5%" >
                             <div class="col-md-6" >
                                 <img src="{{profile.avatar_url}}" width=70% class="img-circle img-responsive">
                             </div>
                             <div class="col-md-6" style="background-color: white">
                                 <div>
-                                   
                                         <ul class="list-group">
                                                 <li class="list-group-item"><b>Username: </b> {{profile.login}}</li>
                                                 <li class="list-group-item"><b>Location: </b> {{profile.location}}</li>
                                                 <li class="list-group-item"><b>E-Mail: </b> {{profile.email}}</li>
                                                 <li class="list-group-item"><b>Blog Link: </b> {{profile.blog}}</li>
                                                 <li class="list-group-item"><b>Member Since: </b> {{profile.created_at|date}} days ago</li>
-                                            </ul>
-                                   
-                                        
-                                    
-                                    
-                                  </div>
+                                        </ul>
+                                </div>
 
-                        <span class="p-a-05 bg-info text-md-center"> {{profile.public_repos}} Public Repos </span>
-                        <span class="p-a-05 bg-primary m-t-1 text-md-center"> {{profile.public_gists}} Public Gists </span>
-                        <span class="p-a-05 bg-danger m-t-1 text-md-center"> {{profile.followers}} Followers </span>
-                        <span class="p-a-05 bg-inverse m-t-1 text-md-center"> {{profile.following}} Followings </span>
-                        <a class="btn btn-sm btn-outline-primary btn-block m-t-1" href="{{profile.html_url}}" target="_blank">View Profile</a>
+                               <span class="p-a-05 bg-info text-md-center"> {{profile.public_repos}} Public Repos </span>
+                               <span class="p-a-05 bg-primary m-t-1 text-md-center"> {{profile.public_gists}} Public Gists </span>
+                               <span class="p-a-05 bg-danger m-t-1 text-md-center"> {{profile.followers}} Followers </span>
+                               <span class="p-a-05 bg-inverse m-t-1 text-md-center"> {{profile.following}} Followings </span>
+                               <a class="btn btn-sm btn-outline-primary btn-block m-t-1" href="{{profile.html_url}}" target="_blank">View Profile</a>
 
                             </div>
-
-                            </div>
+                    </div>
             </div>
                
                 
