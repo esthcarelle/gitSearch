@@ -20,9 +20,11 @@
     </div>
   </nav>
 
-  
+  <div class="container">
         <input style="margin-bottom:5%" [(ngModel)]="user" name="user" (keyup)='findPro()' class="form-control mr-sm-2" type="search" placeholder="Enter a github username" aria-label="Search">
     
+  </div>
+        
 
   
 
@@ -33,7 +35,7 @@
                     <div class="container" >
                             <div class="row" style="margin-bottom:5%" >
                             <div class="col-md-6" >
-                                <img src="{{profile.avatar_url}}" class="img-circle img-responsive">
+                                <img src="{{profile.avatar_url}}" width=70% class="img-circle img-responsive">
                             </div>
                             <div class="col-md-6" style="background-color: white">
                                 <div>
